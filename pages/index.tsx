@@ -4,7 +4,9 @@ const Home: NextPage = () => {
   return (
     <div>
       Totik 
-      {/* commit -m "add index.tsx" */}
+      <p className="bg-red-500 p-2">
+        This is a paragraph
+      </p>
       
     </div>
   )
