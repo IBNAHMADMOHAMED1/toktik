@@ -21,10 +21,13 @@ const Discover: NextPage = () => {
                   <Link href={`/?currentTopic=${topic.name}`} key={index}>
                       <div className={currentTopic === topic.name ? activeTopicStyle : topicStyle}>
                              
-                          <span className='font-bold teext-2xl'
+                          <span className='font-bold text-2xl xl:text-md'
                           >{topic.icon}</span>
-                          <span className=''>{topic.name}</span>
-
+                          <span
+                            className='hidden xl:block'
+                          >
+                              
+                                {topic.name}</span>
                       </div>
                   </Link>
               ))}
