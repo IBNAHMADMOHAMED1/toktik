@@ -1,6 +1,13 @@
 import type { NextPage } from 'next'
+import axios from 'axios'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ posts }) => {
+  
+  // interface Post {
+  //   posts:
+  // }
+  console.log(posts);
+  
   return (
     <div>
       Totik 
@@ -12,4 +19,11 @@ const Home: NextPage = () => {
   )
 }
 
+export const getServerSideProps = async () => {
+  const res = await axios.get('http://localhost:3000/api/post')
+  return { props: { posts: res.data } }
+}
+  
+
 export default Home
+
