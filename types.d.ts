@@ -30,9 +30,10 @@ export interface Video {
 }
 
 export interface IUser {
+_type: string;
   _id: string;
-  _type: string;
   userName: string;
   image: string;
+    
 }
 
