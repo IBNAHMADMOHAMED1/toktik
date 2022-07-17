@@ -36,4 +36,3 @@ export interface IUser {
   image: string;
 }
 
-// github commit: Add type definitions for sanity client
