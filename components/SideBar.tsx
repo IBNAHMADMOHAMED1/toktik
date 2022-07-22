@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
 import { ImCancelCircle } from 'react-icons/im';
-import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin, googleLogout } from '@react-oauth/google'
 import Discover from '../components/Discover';
 import SuggestedAccunts from '../components/SuggestedAccunts';
 import Footer from './Footer';
@@ -43,22 +43,7 @@ const SideBar = () => {
                           <p className=" text-gray-400"
                           > Login To like and comment </p>
                           <div className="flex justify-center">
-                              <GoogleLogin
-                                  clientId=""
-                                  onSuccess={() => {}}
-                                  onFailure={() => {}}
-                                  cookiePolicy={'single_host_origin'}
-                                  render={(renderProps) => (
-                                      <button
-                                          onClick={renderProps.onClick}
-                                          disabled={renderProps.disabled}
-                                          className="bg-white text-lg text-[#F51997] border-[1px] border-[#F51997] font-semibold rounde-md px-6 py-3 outline-none w-full cursor-pointer mt-3 hover:text-white hover:bg-[#F51997]"
-                                      >
-                                          Login with Google
-                                      </button>
-                                    )}
-                                  
-                              />
+                              
                             </div>
                       </div>
                   )}
