@@ -195,9 +195,11 @@ const Upload = () => {
               disabled={videoAsset?.url ? false : true}
               onClick={handlePost}
               type='button'
-              className='bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none'
+              style={savingPost ? { opacity: 0.5 } : {}}
+              className='bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none '
             >
               {savingPost ? 'Posting...' : 'Post'}
+              
             </button>
           </div>
         </div>

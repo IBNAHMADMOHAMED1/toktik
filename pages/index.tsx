@@ -21,7 +21,6 @@ const Home = ({ videos }: IProps) => {
       ) : (
           <NoResults text='No videos found' />
       )}
-      
 
     </div>
   );
@@ -29,7 +28,7 @@ const Home = ({ videos }: IProps) => {
 
 
 export const getServerSideProps = async () => {
-  const res = await axios.get('http://localhost:3000/api/post')
+  const res = await axios.get('http://localhost:3000/api/post/')
   return { props: { videos: res.data } }
 }
   
