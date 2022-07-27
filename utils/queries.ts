@@ -25,10 +25,8 @@ export const allPostsQuery = () => {
     },
     }
   }`;
-
   return query;
 };
-
 export const postDetailQuery = (postId: string | string[]) => {
   const query = `*[_type == "post" && _id == '${postId}']{
     _id,
