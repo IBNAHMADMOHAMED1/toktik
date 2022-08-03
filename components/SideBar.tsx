@@ -38,15 +38,7 @@ const SideBar = () => {
                             </div>
                       </Link>
                   </div>
-                  {!userProfile && (
-                      <div className="px-2 py-4 hidden xl:block">
-                          <p className=" text-gray-400"
-                          > Login To like and comment </p>
-                          <div className="flex justify-center">
-                              
-                            </div>
-                      </div>
-                  )}
+                
                   <Discover />
                   <SuggestedAccunts />
                   <Footer />
