@@ -11,26 +11,31 @@ interface IProps {
 }
 
 const Home = ({ videos }: IProps) => {
-  console.log(videos);
   return (
     <div className='flex flex-col gap-10 videos h-full'>
-      {videos.length ? (
-        videos.map((video) => (
-          <VideoCard key={video._id} post={video} isShowingOnHome />
-        ))
-      ) : (
-          <NoResults text='No videos found' />
-      )}
-
+      {videos.length 
+        ? videos?.map((video: Video) => (
+          <VideoCard post={video} isShowingOnHome key={video._id} />
+        )) 
+        : <NoResults text={`No Videos`} />}
     </div>
   );
 };
 
+export default Home;
 
-export const getServerSideProps = async () => {
-  const res = await axios.get('http://localhost:3000/api/post/')
-  return { props: { videos: res.data } }
-}
+export const getServerSideProps = async ({
+  query: { topic },
+}: {
+  query: { topic: string };
+}) => {
+  let response = await axios.get(`${BASE_URL}/api/post`);
+
+  if(topic) {
+    response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
+  }
   
-
-export default Home
+  return {
+    props: { videos: response.data },
+  };
+};
